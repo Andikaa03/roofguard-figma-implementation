@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+import Button from '../components/Button.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+
+const asset = (name: string) => `/assets/roofguard/${name}`;
+const logo = asset('imgVector.svg');
+const aboutForeground = 'https://www.figma.com/api/mcp/asset/fa45522e-efc5-4036-a14a-171f137997f5.png';
+
+const services = [
+  ['Emergency repairs', 'Same-day callouts to stop leaks, secure tiles, and prevent damage.', 'imgFrame1707482427.png'],
+  ['Roof repairs', 'Fix cracked tiles and storm damage quickly to keep roofs fully watertight.', 'imgFrame1707482428.png'],
+  ['New roofs', 'Install high-quality tile, slate, or pitched roofs built to last decades.', 'imgFrame1707482429.png'],
+  ['Flat roofs', 'EPDM, GRP, and felt roofing systems for garages, extensions, and outbuildings.', 'imgFrame1707482670.png'],
+  ['Gutters & Fascias', 'Repair and replace gutters to protect walls, manage rainwater, and prevent damage.', 'imgFrame1707482430.png'],
+  ['Insurance help', 'We guide you through roof insurance claims, making the process simple and stress-free.', 'imgFrame1707482671.png'],
+];
+
+const projects = [
+  ['Storm-Damaged Roof Repair', 'Manchester', 'imgFrame1707482431.png'],
+  ['Full Roof Replacement', 'Birmingham', 'imgFrame1707482432.png'],
+  ['Flat Roof Renovation', 'Liverpool', 'imgFrame1707482433.png'],
+  ['Emergency Leak Fix', 'Edinburgh', 'imgFrame1707482434.png'],
+];
+
+const principles = [
+  ['Local & reliable', "We're part of your community & understand the unique challenges UK roofs face year-round.", 'imgHome13.svg'],
+  ['Certified & insured', 'Backed by TrustMark, NFRC, & full insurance for your peace of mind.', 'imgCertificate01.svg'],
+  ['24/7 emergency support', "When leaks or storm damage strike, we're just a call away — day or night.", 'imgCustomerSupport.svg'],
+  ['Transparent pricing', 'Honest, upfront quotes with no hidden costs or last-minute surprises.', 'imgFileDollar.svg'],
+  ['Guaranteed workmanship', 'Every job comes with a warranty, ensuring lasting protection for your home.', 'imgSecurityCheck.svg'],
+];
+
+const beforeAfter = [
+  ['/assets/roofguard/imgUnion.png', '/assets/roofguard/imgUnion1.png'],
+  ['/assets/roofguard/imgUnion2.png', '/assets/roofguard/imgUnion3.png'],
+  ['/assets/roofguard/imgUnion4.png', '/assets/roofguard/imgUnion5.png'],
+];
+
+const testimonials = [
+  ['“Storm damaged our tiles badly, Roofguard repaired them quickly and with excellent attention to detail.”', 'David Carter', 'Homeowner', 'Leeds', '10 Mar 2024', 'imgFrame1707482488.png'],
+  ['“Roofguard fixed our leaking roof in just one day — absolutely brilliant service from start to finish. The team arrived on time, explained the issue clearly, and worked quickly. I feel so much safer knowing my home is protected now”', 'Sarah Mitchell', 'Property Manager', 'Birmingham', '14 Feb 2024', 'imgFrame1707482489.png'],
+  ['“Roofguard handled the insurance claim for me, making it a completely stress-free experience overall.”', 'Daniel Foster', 'Shop Owner', 'Sheffield', '12 Jan 2024', 'imgFrame1707482490.png'],
+  ['“Very professional team, they explained everything clearly and did a really top job with care. From the first call to completion, the process was smooth. I’d definitely recommend them to anyone needing roofing work.”', 'James Walker', 'Homeowner', 'Manchester', '22 May 2025', 'imgFrame1707482491.png'],
+  ['“From quote to completion, everything was smooth, and the roof looks fantastic and secure now. The team worked hard, stuck to the timeline, and exceeded our expectations. Highly recommended service.”', 'Laura Scott', 'Homeowner', 'Edinburgh', '18 Oct 2024', 'imgFrame1707482492.png'],
+  ['“We’ve used Roofguard for many years on rental properties, always reliable and highly trustworthy.”', 'Richard Hall', 'Lettings Manager', 'Nottingham', '23 Sep 2025', 'imgFrame1707482493.png'],
+  ['“Excellent communication, fair price, and top-quality work completed on our pitched roof project. The team was skilled and polite, and the finish looks fantastic. Very happy we chose Roofguard.”', 'Hannah Lewis', 'Homeowner', 'Cardiff', '19 Aug 2025', 'imgFrame1707482494.png'],
+  ['“They repaired gutters and fixed roof tiles — fast, tidy, affordable, and very professional throughout.”', 'Olivia Green', 'Homeowner', 'Newcastle', '14 Jun 2025', 'imgFrame1707482495.png'],
+];
+
+const faqs = [
+  ['How do I know if my roof needs repair or replacement?', 'We inspect the roof, explain what we find, and recommend the most practical solution for your home.'],
+  ['How long does a roof replacement take?', 'Timing depends on the size and complexity of the roof, but we will give you a clear schedule before work begins.'],
+  ['Do you provide free estimates?', 'Yes. We provide clear, upfront estimates with no hidden costs.'],
+  ['Are your roofers certified and insured?', 'Yes. Our work is backed by TrustMark, NFRC, and full insurance.'],
+  ['Do you offer emergency roofing services?', 'Yes. Our emergency call-out service is available 24/7.'],
+  ['What types of roofs do you work on?', 'We work on pitched, flat, tile, slate, and metal roofs.'],
+];
+
+const blog = [
+  ['5 signs your roof needs repair', 'Roof Repairs', '16 Sept 2025', '/assets/roofguard/imgFrame1707482524.png'],
+  ['Preparing your roof for winter', 'Seasonal Tips', '02 Sept 2025', '/assets/roofguard/imgFrame1707482525.png'],
+  ['Tile vs slate: which is best?', 'Roofing Materials', '22 Aug 2025', '/assets/roofguard/imgFrame1707482526.png'],
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Expert roofing services across the UK — from minor repairs to full replacements." />
+    <link rel="icon" href={logo} type="image/svg+xml" />
+    <title>Roofguard — Reliable roofing for your home</title>
+  </head>
+  <body>
+    <div class="roofguard-page">
+      <div class="info-bar">
+        <div class="info-items page-width">
+          <span><img src={asset('imgWork.svg')} alt="" />16+ years expertise</span>
+          <span><img src={asset('imgTimer02.svg')} alt="" />24/7 emergency call-out: 0800 123 4567</span>
+          <span><img src={asset('imgAppleReminder.svg')} alt="" />10-year guarantee</span>
+          <span><img src={asset('imgSecurityCheck.svg')} alt="" />NFRC &amp; Trustmark approved</span>
+        </div>
+      </div>
+
+      <header class="site-header">
+        <div class="page-width nav-row">
+          <a class="brand-lockup" href="#top" aria-label="Roofguard home"><img src={logo} alt="" /><span>Roofguard</span></a>
+          <nav class="site-nav" aria-label="Primary navigation"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#reviews">Reviews</a><a href="#blog">Blogs</a><a href="#contact">Contact</a></nav>
+          <Button class="button-accent button-header"><span class="quote-icon" aria-hidden="true"><img src={asset('imgVector1.svg')} alt="" /><img src={asset('imgVector2.svg')} alt="" /><img src={asset('imgVector3.svg')} alt="" /><img src={asset('imgVector4.svg')} alt="" /></span><span>Get free quote</span></Button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero-section">
+          <div class="page-width hero-layout">
+            <div class="hero-trust"><div class="hero-trust-info"><div class="hero-trust-number"><span>60K+</span><div class="hero-avatars"><img src={asset('imgEllipse2.png')} alt="" /><img src={asset('imgEllipse3.png')} alt="" /><img src={asset('imgEllipse4.png')} alt="" /><img src={asset('imgEllipse5.png')} alt="" /></div></div><p>People trusted Roofguard for our premium service.</p></div><div class="hero-call-group"><Button class="button-accent button-large hero-call"><img src={asset('imgCalling02.svg')} alt="" /><span>Emergency call now</span></Button><small><img src={asset('imgTimer3.svg')} alt="" />24/7 available , Call us anytime!</small></div></div>
+            <div class="hero-content"><div class="rating-container"><img class="rating-google" src={asset('imgFrame.svg')} alt="Google" /><span>google</span><img class="rating-stars" src={asset('imgRatingStars.svg')} alt="5 stars" /><span>4.9/ 5 out of 3.2k reviews</span></div><img class="hero-title-image" src={asset('imgTitle.svg')} alt="Reliable roofing for your home" /><p class="hero-lede">Expert roofing services across the UK – from minor repairs to full replacements.</p></div>
+            <div class="hero-visual"><img src={asset('imgHero.png')} alt="Roofguard team building a home" /></div>
+          </div>
+          <div class="service-marquee" aria-label="Roofguard services"><span><img src={asset('imgWork1.svg')} alt="" />Quality roofing service</span><span><img src={asset('imgAmbulance.svg')} alt="" />Emergency response</span><span><img src={asset('imgHome07.svg')} alt="" />Roof inspection &amp; maintenance</span><span><img src={asset('imgBulletproofVest.svg')} alt="" />Metal roofing</span><span><img src={asset('imgHome10.svg')} alt="" />Roof replacement</span></div>
+        </section>
+
+        <section class="challenge-section" id="challenge"><div class="page-width challenge-layout"><div class="challenge-heading"><h2>Storm damage? Don’t<br />worry, we’ve got you<br />covered.</h2><Button class="button-accent button-large"><img src={asset('imgService.svg')} alt="" /><span>Fix my roof</span></Button></div><div class="challenge-story"><div class="challenge-story-column"><p class="lead-copy">Roof problems are stressful. Water can damage your home fast.</p><div class="story-image story-composite"><img src={asset('imgContentImage.png')} alt="Blue sky above a storm damaged roof" /><img src={asset('imgContentImage1.png')} alt="Storm damaged roof" /></div></div><div class="challenge-story-column"><div class="story-image"><img src={asset('imgContentImage2.png')} alt="Roofer at work" /></div><p>We do things differently: clear pricing, quick service, and a guarantee you can trust.</p></div></div></div></section>
+
+        <section class="services-section" id="services"><div class="page-width services-inner"><div class="section-heading-row"><div><h2>Roofing services we<br />offer</h2><p class="section-summary">Everything you need — from small repairs to full replacements</p></div><Button class="button-accent button-large"><img src={asset('imgService.svg')} alt="" /><span>View all services</span></Button></div><div class="service-grid">{services.map(([title, text, image]) => <article class="service-card"><div class="service-image"><img src={asset(image)} alt={title} /></div><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+
+        <section class="projects-section" id="projects"><div class="page-width projects-inner"><div class="projects-heading"><h2>Our recent roofing projects<br />across the UK</h2></div><div class="projects-grid">{projects.map(([title, location, image]) => <article class="project-card"><div class="project-image"><img class="project-main-image" src={asset(image)} alt={title} /><span class="location-tag"><img src={asset('imgLocation10.svg')} alt="" />{location}</span></div><div class="project-meta"><span>{title}</span><img src={asset('imgArrowUpRight03.svg')} alt="" /></div></article>)}</div><Button class="button-accent button-large section-cta"><img src={asset('imgArrowRight01.svg')} alt="" /><span>View all projects</span></Button></div></section>
+
+        <section class="trust-section" id="experience"><div class="page-width trust-layout"><div class="trust-copy"><h2>Why UK homeowners trust us</h2><p>Delivering reliable, certified, and guaranteed roofing services that homeowners can count on — every time.</p><div class="principle-list">{principles.map(([title, text, icon]) => <div class="principle"><img src={asset(icon)} alt="" /><div><h3>{title}</h3><p>{text}</p></div></div>)}</div></div><div class="trust-image"><img src={asset('imgFrame1707482448.png')} alt="David Turner, certified roofer" /><span>David Turner<small>Certified Roofer</small></span><img class="trust-arrow" src={asset('imgVector8.svg')} alt="" /><span class="trust-dot" aria-hidden="true"></span></div></div></section>
+
+        <section class="about-section" id="about"><div class="about-art" aria-hidden="true"><div class="about-art-texture"></div><div class="about-art-clip"><img src={aboutForeground} alt="" /></div></div><div class="page-width about-layout"><div class="about-statement">With 16+ years serving <span>UK homeowners, we combine traditional craftsmanship with modern roofing solutions.</span></div><Button class="button-accent button-large about-button"><span>›</span><span>More about us</span></Button><div class="about-stats"><div class="about-stat-column"><div><strong>10k<span>+</span></strong><span>Roofs installed</span></div><div><strong>8k<span>+</span></strong><span>Happy customers</span></div></div><div class="about-stat-column"><div><strong>160<span>+</span></strong><span>Areas we cover</span></div><div><strong>2.2k<span>+</span></strong><span>Completed projects</span></div></div></div></div></section>
+
+        <section class="before-after-section"><div class="page-width before-after-inner"><div class="center-heading"><h2>Before &amp; After</h2><p>From leaks and damage to safe, lasting roofs,<br />see the difference Roofguard delivers.</p></div><div class="before-after-grid">{beforeAfter.map(([before, after]) => <article class="before-after-card"><div class="before-image"><img src={before} alt="Before roof" /><span>Before</span></div><div class="after-image"><img src={after} alt="After roof" /><span>After</span></div><Button class="ba-handle" aria-label="Compare before and after"><img src={asset('imgArrowLeft01.svg')} alt="" /><img src={asset('imgArrowLeft2.svg')} alt="" /></Button></article>)}</div></div></section>
+
+        <section class="testimonials-section" id="reviews"><div class="page-width testimonials-inner"><div class="section-heading-row"><div><h2>What our clients say</h2><p class="section-summary">Real reviews from happy customers across the UK</p></div></div><div class="testimonial-grid"><div class="testimonial-row testimonial-row-primary">{testimonials.slice(0, 4).map(([quote, name, role, location, date, avatar]) => <TestimonialCard quote={quote} name={name} role={role} location={location} date={date} avatar={avatar} />)}</div><div class="testimonial-row testimonial-row-secondary">{testimonials.slice(4).map(([quote, name, role, location, date, avatar]) => <TestimonialCard quote={quote} name={name} role={role} location={location} date={date} avatar={avatar} />)}</div></div></div></section>
+
+        <section class="contact-strip" id="contact"><div class="contact-inner"><div class="contact-label"><img src={asset('imgCustomerSupport.svg')} alt="" />24/7 emergency call – free from landlines &amp; mobiles</div><a href="tel:08009234587" class="contact-email"><span class="contact-icon"><img src={asset('imgCalling02.svg')} alt="" /></span>(0800) 923 4587</a><div class="contact-marquee">Let’s talk <span>Let’s talk</span> <span>Let’s talk</span> <span>Let’s talk</span> <span>Let’s talk</span> <span>Let’s talk</span></div></div></section>
+
+        <section class="faq-section"><div class="page-width faq-inner"><div class="center-heading"><h2>Frequently asked questions</h2><p>Everything you need to know before hiring Roofguard.</p></div><div class="faq-list">{faqs.map(([question, answer], index) => <details><summary><span>{index + 1}. {question}</span><b>›</b></summary><p>{answer}</p></details>)}</div><div class="faq-cta"><div><h3>Still have questions?</h3><p>Contact our team today for quick, friendly advice.</p></div><Button class="button-accent button-large"><img src={asset('imgCalling02.svg')} alt="" /><span>Schedule Your Free Inspection</span></Button></div></div></section>
+
+        <section class="blog-section" id="blog"><div class="page-width blog-inner"><div class="section-heading-row"><div><h2>Blog &amp; Roofing tips</h2><p class="section-summary">Stay informed with expert advice to protect your roof and home.</p></div><Button class="button-accent button-large"><img src={asset('imgArrowRight01.svg')} alt="" /><span>See all blogs</span></Button></div><div class="blog-grid">{blog.map(([title, category, date, image]) => <article class="blog-card"><div class="blog-meta"><span><img src={asset('imgTags.svg')} alt="" />{category}</span><span><img src={asset('imgCalendar03.svg')} alt="" />{date}</span></div><img src={image} alt={title} /><div class="blog-title"><h3>{title}</h3><img src={asset('imgGroup41.svg')} alt="" /></div></article>)}</div></div></section>
+      </main>
+
+      <footer class="site-footer"><div class="page-width footer-columns"><div><h3>Quick Menu</h3><a href="#top">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div><div><h3>Our Services</h3><span>Roof Installation</span><span>Roof Repairs</span><span>Gutter Cleaning</span><span>Flat Roofing</span><span>Slate &amp; Tile Roofing</span></div><div><h3>Trusted by homeowners</h3><span>TrustMark Certified</span><span>NFRC Member</span><span>Rated 5★ on Google</span><span>10-Year Workmanship Guarantee</span></div><div><h3>Contact us</h3><a href="tel:02012345678"><img src={asset('imgCalling02.svg')} alt="" />020 1234 5678</a><a href="mailto:info@roofguard.co.uk"><img src={asset('imgMail02.svg')} alt="" />info@roofguard.co.uk</a><span><img src={asset('imgLocation10.svg')} alt="" />London, UK</span><span><img src={asset('imgCalendar03.svg')} alt="" />Open 7 days a week</span></div></div><div class="page-width footer-bottom"><div class="footer-logo"><img src={logo} alt="" /><span>Roofguard</span></div><div class="footer-meta"><div><img src={asset('imgFacebook01.svg')} alt="" /><img src={asset('imgLinkedin01.svg')} alt="" /><img src={asset('imgInstagram.svg')} alt="" /><img src={asset('imgNewTwitterRectangle.svg')} alt="" /></div><span>© 2025 Roofguard. All rights reserved.</span></div></div></footer>
+    </div>
+  </body>
+</html>

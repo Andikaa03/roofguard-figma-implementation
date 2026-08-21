@@ -1,0 +1,34 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  role: string;
+  location: string;
+  date: string;
+  avatar: string;
+}
+
+const { quote, name, role, location, date, avatar } = Astro.props;
+const asset = (name: string) => `/assets/roofguard/${name}`;
+---
+
+<article class="testimonial-card">
+  <p>{quote}</p>
+  <div class="testimonial-footer">
+    <div class="testimonial-meta">
+      <span><img src={asset('imgLocation05.svg')} alt="" />{location}</span>
+      <span><img src={asset('imgCalendar03.svg')} alt="" />{date}</span>
+    </div>
+    <div class="testimonial-person">
+      <img src={asset(avatar)} alt="" />
+      <span><strong>{name}</strong><small>{role}</small></span>
+      <b aria-label="5 stars">
+        <img src={asset('imgMynauiStarSolid.svg')} alt="" />
+        <img src={asset('imgMynauiStarSolid.svg')} alt="" />
+        <img src={asset('imgMynauiStarSolid.svg')} alt="" />
+        <img src={asset('imgMynauiStarSolid.svg')} alt="" />
+        <img src={asset('imgMynauiStarSolid.svg')} alt="" />
+      </b>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  'aria-label'?: string;
+}
+
+const {
+  class: className = '',
+  type = 'button',
+  disabled = false,
+  'aria-label': ariaLabel,
+} = Astro.props;
+---
+
+<button
+  class={`button ${className}`}
+  type={type}
+  disabled={disabled}
+  aria-label={ariaLabel}
+>
+  <slot />
+</button>
