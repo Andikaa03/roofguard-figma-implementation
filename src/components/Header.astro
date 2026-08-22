@@ -12,10 +12,16 @@ const prefix = isHome ? '' : '/';
 <!-- Info Bar -->
 <div class="info-bar">
   <div class="info-items page-width">
-    <span><img src={asset('imgWork.svg')} alt="" />15+ Years Strategic Advisory</span>
-    <span><img src={asset('imgSecurityCheck.svg')} alt="" />Branding • Strategy • Business Development • Data</span>
-    <span><img src={asset('imgAppleReminder.svg')} alt="" />Outcome-Driven Growth Frameworks</span>
-    <span><img src={asset('imgTimer02.svg')} alt="" />Global Advisory Practice</span>
+    <div class="info-items-track">
+      <span><img src={asset('imgWork.svg')} alt="" />15+ Years Strategic Advisory</span>
+      <span><img src={asset('imgSecurityCheck.svg')} alt="" />Branding • Strategy • Business Development • Data</span>
+      <span><img src={asset('imgAppleReminder.svg')} alt="" />Outcome-Driven Growth Frameworks</span>
+      <span><img src={asset('imgTimer02.svg')} alt="" />Global Advisory Practice</span>
+      <span aria-hidden="true"><img src={asset('imgWork.svg')} alt="" />15+ Years Strategic Advisory</span>
+      <span aria-hidden="true"><img src={asset('imgSecurityCheck.svg')} alt="" />Branding • Strategy • Business Development • Data</span>
+      <span aria-hidden="true"><img src={asset('imgAppleReminder.svg')} alt="" />Outcome-Driven Growth Frameworks</span>
+      <span aria-hidden="true"><img src={asset('imgTimer02.svg')} alt="" />Global Advisory Practice</span>
+    </div>
   </div>
 </div>
 
