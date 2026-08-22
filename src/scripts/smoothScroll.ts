@@ -132,41 +132,7 @@ export function initSmoothExperience() {
     }
   }
 
-  // 4. Contact Text Progressive Illumination
-  const contactSection = document.getElementById('contact');
-  const items = document.querySelectorAll(
-    '#contactScrollTrack .scroll-word, #contactScrollTrack .scroll-sep'
-  );
-  if (contactSection && items.length) {
-    function checkProgress() {
-      const rect = contactSection!.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const enterPoint = windowHeight * 0.9;
-      const fullPoint = windowHeight * 0.2;
-      const progress = Math.min(
-        Math.max((enterPoint - rect.top) / (enterPoint - fullPoint), 0),
-        1
-      );
-
-      const count = items.length;
-      items.forEach((el, index) => {
-        const threshold = index / count;
-        if (progress >= threshold && progress > 0.02) {
-          el.classList.add('is-lit');
-        } else {
-          el.classList.remove('is-lit');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', () => requestAnimationFrame(checkProgress), {
-      passive: true,
-    });
-    window.addEventListener('resize', checkProgress, { passive: true });
-    checkProgress();
-  }
-
-  // 5. Sticky Header Scroll Detection
+  // 4. Sticky Header Scroll Detection
   const header = document.querySelector('.site-header');
   if (header) {
     function updateHeader() {

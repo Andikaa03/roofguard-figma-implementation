@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Hero3DCarousel from '../components/Hero3DCarousel.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
+import CtaBand from '../components/CtaBand.astro';
 
 const asset = (name: string) => `/assets/roofguard/${name}`;
 const kouns = (name: string) => `/assets/kouns/${name}`;
@@ -16,9 +17,11 @@ const disciplines = [
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
     items: [
       'Brand strategy & positioning',
-      'Brand architecture & messaging',
-      'Value proposition design',
-      'Go-to-market brand development'
+      'Positioning & differentiation',
+      'Brand architecture',
+      'Messaging & value proposition',
+      'Brand development',
+      'Go-to-market strategy'
     ]
   },
   {
@@ -29,9 +32,12 @@ const disciplines = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     items: [
       'Business & growth strategy',
-      'Market & competitive intelligence',
-      'Strategic planning & roadmapping',
-      'Market entry & commercial strategy'
+      'Market analysis',
+      'Competitive intelligence',
+      'Strategic planning',
+      'Market entry & expansion',
+      'Commercial strategy',
+      'Go-to-market planning'
     ]
   },
   {
@@ -41,10 +47,13 @@ const disciplines = [
     desc: 'Growth comes from seeing untapped opportunities. We develop new markets, cultivate partners, and turn relationships into long-term enterprise value.',
     image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80',
     items: [
-      'New business & partnership models',
-      'Market expansion & commercialization',
-      'Commercial pipeline strategy',
-      'Strategic alliance building'
+      'Business development strategy',
+      'Market expansion',
+      'Partnership development',
+      'Opportunity identification',
+      'Commercial development',
+      'Sales strategy',
+      'Go-to-market execution'
     ]
   },
   {
@@ -54,10 +63,13 @@ const disciplines = [
     desc: 'Data is everywhere; meaningful insight is not. We transform market and business data into clear signals that inform high-conviction decisions.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     items: [
-      'Market & customer research',
-      'Performance & business analytics',
-      'Custom dashboards & intelligence',
-      'Trend & opportunity forecasting'
+      'Market research',
+      'Customer & audience insights',
+      'Data analysis',
+      'Performance analysis',
+      'Business intelligence',
+      'Dashboards & reporting',
+      'Opportunity & trend analysis'
     ]
   }
 ];
@@ -212,16 +224,11 @@ const faqs = [
   ['How quickly can we start and see actionable outcomes?', 'We can typically kick off within two weeks of initial alignment. Our Discover & Define phase delivers high-priority strategic signals and clarity within the first few weeks.'],
 ];
 
-const articles = [
-  ['Turning Data Into Direction: Why Insight Trumps Volume', 'Strategy & Data', '15 Aug 2026', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'],
-  ['The Interconnected Growth Model: Brand Meets Commercial Velocity', 'Growth Advisory', '28 Jul 2026', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'],
-  ['Strategic Positioning in Volatile Markets: Lessons From 50+ Engagements', 'Market Strategy', '10 Jul 2026', 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80'],
-];
 ---
 
 <Layout
-  title="KOUNS — Strategy that creates growth"
-  description="KOUNS — Strategy that creates growth. Branding, Strategy, Business Development, and Data & Insights for ambitious businesses."
+  title="KOUNS — Turn insight into impact. Build what’s next."
+  description="KOUNS brings together Branding, Strategy, Business Development, and Data & Insights to help ambitious businesses build what’s next."
   isHome={true}
 >
   <main id="top">
@@ -240,7 +247,7 @@ const articles = [
 
             <!-- 2. Main Centered Title -->
             <h1 class="hero-title" data-reveal>
-              Strategy that creates <span class="text-highlight">growth<span class="dot-accent">.</span></span>
+              Turn insight into impact.<br />Build what’s next.
             </h1>
 
             <!-- 3. Centered Lede Copy -->
@@ -568,7 +575,68 @@ const articles = [
           </div>
         </section>
 
-        <!-- 06 & 07 — Why Us & Selected Areas of Experience -->
+        <!-- 06 — Why Us -->
+        <section class="approach-section why-us-section" id="why-us">
+          <div class="page-width">
+            <div class="approach-header" data-reveal>
+              <div class="section-tag">
+                <span class="tag-dot"></span>
+                <span>Why Us</span>
+              </div>
+              <div class="approach-title-row">
+                <div>
+                  <h2>Strategic thinking.<br />Commercial perspective.<br />Practical execution.</h2>
+                </div>
+                <p class="approach-lead">
+                  We bring together strategic, creative and analytical thinking with a strong understanding of how businesses actually operate.
+                </p>
+              </div>
+            </div>
+
+            <div class="stages-grid why-us-grid" data-reveal-stagger>
+              <article class="stage-card">
+                <div class="stage-card-top"><span class="stage-step">Perspective 01</span><div class="stage-icon-wrap"><img src={asset('imgWork.svg')} alt="" /></div></div>
+                <h3 class="stage-title">Business</h3>
+                <p class="stage-desc">We ground strategic decisions in the commercial realities, operating models and ambitions of your business.</p>
+              </article>
+              <article class="stage-card">
+                <div class="stage-card-top"><span class="stage-step">Perspective 02</span><div class="stage-icon-wrap"><img src={asset('imgTags.svg')} alt="" /></div></div>
+                <h3 class="stage-title">Brand</h3>
+                <p class="stage-desc">We make the opportunity meaningful and relevant through clear positioning, narrative and customer experience.</p>
+              </article>
+              <article class="stage-card">
+                <div class="stage-card-top"><span class="stage-step">Perspective 03</span><div class="stage-icon-wrap"><img src={asset('imgArrowUpRight03.svg')} alt="" /></div></div>
+                <h3 class="stage-title">Market</h3>
+                <p class="stage-desc">We read the competitive landscape and identify the markets, segments and opportunities where momentum can grow.</p>
+              </article>
+              <article class="stage-card">
+                <div class="stage-card-top"><span class="stage-step">Perspective 04</span><div class="stage-icon-wrap"><img src={asset('imgFileDollar.svg')} alt="" /></div></div>
+                <h3 class="stage-title">Data</h3>
+                <p class="stage-desc">We turn performance, customer and market data into insight that improves the quality of each decision.</p>
+              </article>
+              <article class="stage-card">
+                <div class="stage-card-top"><span class="stage-step">Perspective 05</span><div class="stage-icon-wrap"><img src={asset('imgCustomerSupport.svg')} alt="" /></div></div>
+                <h3 class="stage-title">People</h3>
+                <p class="stage-desc">We design practical direction around the leaders, teams and relationships that turn strategy into action.</p>
+              </article>
+            </div>
+
+            <div class="stage-diagnostic-banner why-us-statement" data-reveal>
+              <div class="diagnostic-content">
+                <div class="diagnostic-badge"><img src={asset('imgImpact.svg')} alt="" /><span>Our Perspective</span></div>
+                <h3>We don’t believe in strategy for strategy’s sake.</h3>
+                <p>We believe in clear thinking that leads to meaningful action.</p>
+                <div class="why-us-goals" aria-label="Our goal">
+                  <span><b>01.</b><span>Help you see the opportunity.</span></span>
+                  <span><b>02.</b><span>Define the path forward.</span></span>
+                  <span><b>03.</b><span>Build the momentum to get there.</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 — Selected Areas of Experience -->
         <section class="projects-section" id="experience">
           <div class="page-width projects-inner">
             <div class="projects-heading" data-reveal>
@@ -622,12 +690,18 @@ const articles = [
           <div class="page-width about-layout">
             <div class="about-top-row" data-reveal>
               <div class="about-statement">
-                Built at the intersection of <span class="about-highlight">strategy, creativity, commercial vision, and growth.</span>
+                Built at the intersection of <span class="about-highlight">strategy, creativity and growth.</span>
               </div>
               <a href="#contact" class="button button-accent button-large about-button">
                 <span>Meet the Founder</span>
                 <img src={asset('imgArrowUpRight03.svg')} alt="" />
               </a>
+            </div>
+
+            <div class="about-copy" data-reveal>
+              <p>KOUNS was created to help businesses navigate an increasingly complex world. Markets change faster. Customer expectations evolve. Competition becomes more sophisticated. And businesses have access to more information than ever before.</p>
+              <p class="about-copy-emphasis">The challenge is no longer simply having access to information.<br /><strong>It’s knowing what to do with it.</strong></p>
+              <p>We bring together strategic thinking, commercial experience, brand expertise and data-driven insight to help businesses make better decisions and create meaningful growth.</p>
             </div>
 
             <div class="about-stats-grid" id="aboutStatsGrid" data-reveal-stagger>
@@ -690,30 +764,6 @@ const articles = [
           </div>
         </section>
 
-        <!-- 09 — Final CTA & Contact Strip -->
-        <section class="contact-strip" id="contact">
-          <div class="contact-inner" data-reveal>
-            <div class="contact-label">
-              <img src={asset('imgCustomerSupport.svg')} alt="" />
-              Ready to build what’s next? Let’s start with a conversation.
-            </div>
-            <a href="mailto:hello@kouns.agency" class="contact-email">
-              hello@kouns.agency
-            </a>
-            <div class="contact-scroll-track" id="contactScrollTrack" aria-label="Strategic Growth Progression">
-              <span class="scroll-word">Let’s talk</span>
-              <span class="scroll-sep">•</span>
-              <span class="scroll-word">Let’s align</span>
-              <span class="scroll-sep">•</span>
-              <span class="scroll-word">Let’s build</span>
-              <span class="scroll-sep">•</span>
-              <span class="scroll-word">Let’s scale</span>
-              <span class="scroll-sep">•</span>
-              <span class="scroll-word">Let’s transform</span>
-            </div>
-          </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq-section">
           <div class="page-width faq-inner" data-reveal>
@@ -751,35 +801,8 @@ const articles = [
           </div>
         </section>
 
-        <!-- Blog / Perspectives Section -->
-        <section class="blog-section" id="blog">
-          <div class="page-width blog-inner">
-            <div class="section-heading-row" data-reveal>
-              <div>
-                <h2>Perspectives &amp; Insights</h2>
-                <p class="section-summary">Strategic frameworks and analysis on brand, commercial execution, and market intelligence.</p>
-              </div>
-              <a href="#contact" class="button button-accent button-large">
-                <img src={asset('imgArrowRight01.svg')} alt="" />
-                <span>Explore All</span>
-              </a>
-            </div>
-            <div class="blog-grid" data-reveal-stagger>
-              {articles.map(([title, category, date, image]) => (
-                <article class="blog-card">
-                  <div class="blog-meta">
-                    <span><img src={asset('imgTags.svg')} alt="" />{category}</span>
-                    <span><img src={asset('imgCalendar03.svg')} alt="" />{date}</span>
-                  </div>
-                  <img src={image} alt={title} />
-                  <div class="blog-title">
-                    <h3>{title}</h3>
-                    <img src={asset('imgGroup41.svg')} alt="" />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <!-- 09 — Final CTA -->
+        <CtaBand />
+
   </main>
 </Layout>

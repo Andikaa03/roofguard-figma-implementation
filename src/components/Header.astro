@@ -26,17 +26,13 @@ const prefix = isHome ? '' : '/';
       <img src={kouns('logo-header-dark.png')} alt="KOUNS" class="brand-header-logo" />
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href={`${prefix}#challenge`}>The Challenge</a>
-      <a href={`${prefix}#disciplines`}>What We Do</a>
-      <a href={`${prefix}#approach`}>Our Approach</a>
-      <a href={`${prefix}#work`}>How We Work</a>
-      <a href={`${prefix}#who`}>Who We Work With</a>
-      <a href={`${prefix}#experience`}>Experience</a>
+      <a href={`${prefix}#disciplines`}>Services</a>
       <a href={`${prefix}#about`}>About</a>
+      <a href={`${prefix}#contact`}>Contact</a>
     </nav>
-    <a href={`${prefix}#contact`} class="button button-accent button-header">
+    <a class="button button-accent button-header" href={`${prefix}#contact`}>
       <span>Let’s Talk</span>
-      <img src={asset('imgArrowUpRightDark.svg')} alt="" style="width: 14px; height: 14px;" />
+      <img src={asset('imgArrowRight01.svg')} alt="" aria-hidden="true" />
     </a>
   </div>
 </header>
