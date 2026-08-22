@@ -679,8 +679,29 @@ p { font-size: 15.5px; font-weight: 400; line-height: 1.65; color: var(--muted);
 }
 
 /* 09 — Final CTA Strip */
-.contact-strip { position: relative; height: 600px; min-height: 600px; overflow: hidden; background: var(--dark); color: #fff; }
-.contact-inner { position: absolute; top: 140px; left: 50%; width: 1660px; max-width: none; transform: translateX(-50%); text-align: center; }
+.contact-strip {
+  position: relative;
+  height: auto;
+  min-height: 520px;
+  padding-block: 100px 88px;
+  overflow: hidden;
+  background: var(--dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.contact-inner {
+  position: relative;
+  width: min(1368px, calc(100% - 72px));
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .contact-label { display: flex; width: max-content; align-items: center; gap: 8px; margin-inline: auto; color: #fff; font-size: 17px; font-weight: 500; }
 .contact-email {
   display: inline-flex;
@@ -967,8 +988,8 @@ p { font-size: 15.5px; font-weight: 400; line-height: 1.65; color: var(--muted);
   .testimonials-section { padding-block: 64px; }
   .testimonials-section::before, .testimonials-section::after { width: 60px; }
   .testimonial-card { width: 340px; min-width: 340px; min-height: 280px; padding: 20px 18px; }
-  .contact-strip { height: auto; min-height: 500px; }
-  .contact-inner { position: static; width: 100%; max-width: 100%; padding-block: 72px; transform: none; }
+  .contact-strip { height: auto; min-height: auto; padding-block: 72px 64px; }
+  .contact-inner { width: 100%; }
   .contact-label { width: 100%; max-width: 100%; justify-content: center; padding-inline: 16px; text-align: center; }
   .contact-email { font-size: clamp(38px, 8vw, 64px); white-space: normal; }
   .contact-scroll-track { width: 100%; margin-top: 56px; font-size: 24px; gap: 16px; flex-wrap: wrap; }
@@ -1055,5 +1076,77 @@ p { font-size: 15.5px; font-weight: 400; line-height: 1.65; color: var(--muted);
   .footer-columns { grid-template-columns: 1fr; gap: 32px; }
   .footer-brand-logo { width: 220px; max-width: 100%; height: auto; }
 }
+
+/* ==========================================================================
+   Framer-Style Scroll Reveal & Smooth Animations
+   ========================================================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="right"] {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="scale"] {
+  opacity: 0;
+  transform: scale(0.94) translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-revealed,
+[data-reveal="left"].is-revealed,
+[data-reveal="right"].is-revealed,
+[data-reveal="scale"].is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Staggered Children Animations (Framer List/Grid Motion) */
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal-stagger].is-revealed > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].is-revealed > *:nth-child(2) { transition-delay: 0.14s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].is-revealed > *:nth-child(3) { transition-delay: 0.23s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].is-revealed > *:nth-child(4) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].is-revealed > *:nth-child(5) { transition-delay: 0.41s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].is-revealed > *:nth-child(6) { transition-delay: 0.50s; opacity: 1; transform: translateY(0); }
+
+/* Lenis Smooth Scroll Core Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 
 

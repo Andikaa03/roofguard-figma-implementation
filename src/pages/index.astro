@@ -229,11 +229,8 @@ const articles = [
     <section class="hero-section">
           <div class="page-width hero-center-container">
             <!-- 1. Top Rating Pill -->
-            <div class="rating-container">
-              <div class="rating-icon-pill">
-                <img class="rating-google" src={asset('imgFrame.svg')} alt="Verified" />
-                <span>Strategic Impact</span>
-              </div>
+            <div class="rating-container" data-reveal>
+              <span class="rating-icon-pill">Strategic Impact</span>
               <div class="rating-stars-wrap">
                 <img class="rating-stars" src={asset('imgRatingStars.svg')} alt="5 stars" />
                 <span class="rating-score">5.0 / 5.0</span>
@@ -242,17 +239,17 @@ const articles = [
             </div>
 
             <!-- 2. Main Centered Title -->
-            <h1 class="hero-title">
+            <h1 class="hero-title" data-reveal>
               Strategy that creates <span class="text-highlight">growth<span class="dot-accent">.</span></span>
             </h1>
 
             <!-- 3. Centered Lede Copy -->
-            <p class="hero-lede">
+            <p class="hero-lede" data-reveal>
               We help ambitious businesses build stronger brands, make smarter strategic decisions, unlock new opportunities, and turn data into sustainable growth.
             </p>
 
             <!-- 4. Centered Actions -->
-            <div class="hero-cta-wrapper">
+            <div class="hero-cta-wrapper" data-reveal>
               <a href="#contact" class="button button-accent button-large hero-call">
                 <img src={asset('imgCalling02.svg')} alt="" />
                 <span>Let’s Talk</span>
@@ -260,7 +257,9 @@ const articles = [
             </div>
 
             <!-- 5. 3D Rotating Hero Visual Carousel Component -->
-            <Hero3DCarousel />
+            <div data-reveal="scale" style="width: 100%; display: flex; justify-content: center;">
+              <Hero3DCarousel />
+            </div>
           </div>
 
           <!-- Marquee Ticker -->
@@ -286,7 +285,7 @@ const articles = [
         <!-- 01 — The Challenge Section -->
         <section class="challenge-section" id="challenge">
           <div class="page-width">
-            <div class="challenge-header">
+            <div class="challenge-header" data-reveal>
               <div class="section-tag">
                 <span class="tag-dot"></span>
                 <span>The Challenge</span>
@@ -301,9 +300,9 @@ const articles = [
 
             <div class="challenge-content-grid">
               <!-- Left Column: The 4 Strategic Inflection Points -->
-              <div class="challenge-moments">
+              <div class="challenge-moments" data-reveal="left">
                 <span class="moments-label">Defining moments where we partner with leaders:</span>
-                <div class="moments-list">
+                <div class="moments-list" data-reveal-stagger>
                   <div class="moment-item">
                     <div class="moment-icon"><img src={asset('imgTags.svg')} alt="" /></div>
                     <div class="moment-text">
@@ -339,7 +338,7 @@ const articles = [
               </div>
 
               <!-- Right Column: Visual + Agency Mission & Quote -->
-              <div class="challenge-card-side">
+              <div class="challenge-card-side" data-reveal="right">
                 <div class="challenge-photo-card">
                   <img src={kouns('challenge-meeting.jpg')} alt="Strategic Executive Alignment" class="challenge-photo" />
                   <div class="challenge-photo-tag">
@@ -369,7 +368,7 @@ const articles = [
         <!-- 02 — What We Do Section (Four Disciplines) -->
         <section class="services-section" id="disciplines">
           <div class="page-width services-inner">
-            <div class="section-heading-row">
+            <div class="section-heading-row" data-reveal>
               <div>
                 <h2>Four disciplines.<br />One growth perspective.</h2>
                 <p class="section-summary">
@@ -382,7 +381,7 @@ const articles = [
               </a>
             </div>
 
-            <div class="disciplines-grid">
+            <div class="disciplines-grid" data-reveal-stagger>
               {disciplines.map((d) => (
                 <article class="discipline-card">
                   <div class="discipline-image">
@@ -406,7 +405,7 @@ const articles = [
         <!-- 03 — Our Approach Section (Integrated Growth Architecture) -->
         <section class="approach-section" id="approach">
           <div class="page-width">
-            <div class="approach-header">
+            <div class="approach-header" data-reveal>
               <div class="section-tag">
                 <span class="tag-dot"></span>
                 <span>Integrated Growth Architecture</span>
@@ -432,7 +431,7 @@ const articles = [
 
             <div class="approach-grid">
               <!-- Left Column: The 5 Integrated Principles -->
-              <div class="approach-pillars-list">
+              <div class="approach-pillars-list" data-reveal-stagger>
                 {approachPoints.map((point) => (
                   <div class="approach-pillar-card">
                     <div class="pillar-icon-box">
@@ -451,7 +450,7 @@ const articles = [
               </div>
 
               <!-- Right Column: Visual Frame + Synergy Callout Card -->
-              <div class="approach-visual-column">
+              <div class="approach-visual-column" data-reveal="right">
                 <div class="approach-photo-frame">
                   <img src={kouns('approach-team.jpg')} alt="KOUNS Strategic Growth Collaboration" class="approach-photo" />
                   <div class="approach-photo-overlay">
@@ -491,11 +490,15 @@ const articles = [
         <!-- 04 — How We Work Section -->
         <section class="before-after-section" id="work">
           <div class="page-width before-after-inner">
-            <div class="center-heading">
+            <div class="center-heading" data-reveal>
+              <div class="section-tag">
+                <span class="tag-dot"></span>
+                <span>How We Work</span>
+              </div>
               <h2>From complexity to clarity.</h2>
               <p>Our approach is designed to be collaborative, practical and focused on tangible outcomes.</p>
             </div>
-            <div class="steps-grid">
+            <div class="steps-grid" data-reveal-stagger>
               {processSteps.map((step) => (
                 <div class="step-card">
                   <div class="step-num">{step.num}</div>
@@ -511,7 +514,7 @@ const articles = [
         <!-- 05 — Who We Work With Section (Client Growth Horizons) -->
         <section class="stages-section" id="who">
           <div class="page-width">
-            <div class="stages-header">
+            <div class="stages-header" data-reveal>
               <div class="section-tag">
                 <span class="tag-dot"></span>
                 <span>Client Growth Horizons</span>
@@ -522,7 +525,7 @@ const articles = [
               </p>
             </div>
 
-            <div class="stages-grid">
+            <div class="stages-grid" data-reveal-stagger>
               {whoWeWorkWith.map((w) => (
                 <div class="stage-card">
                   <div class="stage-card-top">
@@ -544,7 +547,7 @@ const articles = [
             </div>
 
             <!-- Strategic Stage Diagnostic Callout -->
-            <div class="stage-diagnostic-banner">
+            <div class="stage-diagnostic-banner" data-reveal>
               <div class="diagnostic-content">
                 <div class="diagnostic-badge">
                   <img src={asset('imgAppleReminder.svg')} alt="" />
@@ -568,14 +571,14 @@ const articles = [
         <!-- 06 & 07 — Why Us & Selected Areas of Experience -->
         <section class="projects-section" id="experience">
           <div class="page-width projects-inner">
-            <div class="projects-heading">
+            <div class="projects-heading" data-reveal>
               <h2>Experience that travels.</h2>
               <p class="section-summary" style="margin-top: 12px;">
                 Our experience spans brands, markets, products, commercial strategies and growth challenges across diverse industries and business environments.
               </p>
             </div>
 
-            <div class="experience-grid">
+            <div class="experience-grid" data-reveal-stagger>
               {experienceAreas.map((exp) => (
                 <article class="experience-card">
                   <div class="experience-image">
@@ -594,7 +597,7 @@ const articles = [
               ))}
             </div>
 
-            <div class="experience-cta-card">
+            <div class="experience-cta-card" data-reveal>
               <div class="experience-quote-wrap">
                 <div class="quote-symbol" aria-hidden="true">“</div>
                 <div class="quote-text-group">
@@ -617,7 +620,7 @@ const articles = [
         <!-- 08 — About Section -->
         <section class="about-section" id="about">
           <div class="page-width about-layout">
-            <div class="about-top-row">
+            <div class="about-top-row" data-reveal>
               <div class="about-statement">
                 Built at the intersection of <span class="about-highlight">strategy, creativity, commercial vision, and growth.</span>
               </div>
@@ -627,7 +630,7 @@ const articles = [
               </a>
             </div>
 
-            <div class="about-stats-grid" id="aboutStatsGrid">
+            <div class="about-stats-grid" id="aboutStatsGrid" data-reveal-stagger>
               <div class="about-stat-item">
                 <strong data-counter="4" data-suffix="+"><span class="counter-num">0</span><span class="counter-suffix">+</span></strong>
                 <span>Core Disciplines</span>
@@ -651,11 +654,11 @@ const articles = [
         <!-- Testimonials Section -->
         <section class="testimonials-section" id="reviews">
           <div class="page-width testimonials-inner">
-            <div class="center-heading">
+            <div class="center-heading" data-reveal>
               <h2>What leaders say</h2>
               <p class="section-summary">Perspectives from executives, founders, and partners who trust KOUNS</p>
             </div>
-            <div class="testimonial-marquee-wrapper">
+            <div class="testimonial-marquee-wrapper" data-reveal="scale">
               <!-- Row 1: Moving to the Left -->
               <div class="testimonial-track-row track-left">
                 <div class="testimonial-track-inner">
@@ -689,7 +692,7 @@ const articles = [
 
         <!-- 09 — Final CTA & Contact Strip -->
         <section class="contact-strip" id="contact">
-          <div class="contact-inner">
+          <div class="contact-inner" data-reveal>
             <div class="contact-label">
               <img src={asset('imgCustomerSupport.svg')} alt="" />
               Ready to build what’s next? Let’s start with a conversation.
@@ -713,7 +716,7 @@ const articles = [
 
         <!-- FAQ Section -->
         <section class="faq-section">
-          <div class="page-width faq-inner">
+          <div class="page-width faq-inner" data-reveal>
             <div class="center-heading">
               <h2>Frequently asked questions</h2>
               <p>Everything you need to know about partnering with KOUNS.</p>
@@ -751,7 +754,7 @@ const articles = [
         <!-- Blog / Perspectives Section -->
         <section class="blog-section" id="blog">
           <div class="page-width blog-inner">
-            <div class="section-heading-row">
+            <div class="section-heading-row" data-reveal>
               <div>
                 <h2>Perspectives &amp; Insights</h2>
                 <p class="section-summary">Strategic frameworks and analysis on brand, commercial execution, and market intelligence.</p>
@@ -761,7 +764,7 @@ const articles = [
                 <span>Explore All</span>
               </a>
             </div>
-            <div class="blog-grid">
+            <div class="blog-grid" data-reveal-stagger>
               {articles.map(([title, category, date, image]) => (
                 <article class="blog-card">
                   <div class="blog-meta">

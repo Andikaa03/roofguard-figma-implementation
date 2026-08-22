@@ -39,103 +39,13 @@ const kouns = (path: string) => `/assets/kouns/${path}`;
       <Footer isHome={isHome} />
     </div>
 
-    <script is:inline>
-      function initCounters() {
-        const statsSection = document.getElementById('aboutStatsGrid');
-        if (!statsSection) return;
-
-        let hasAnimated = false;
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && !hasAnimated) {
-              hasAnimated = true;
-              startCounting();
-            }
-          });
-        }, { threshold: 0.25 });
-
-        observer.observe(statsSection);
-
-        function startCounting() {
-          const counterElements = statsSection.querySelectorAll('[data-counter]');
-          const duration = 1800;
-          const frameDuration = 1000 / 60;
-          const totalFrames = Math.round(duration / frameDuration);
-
-          counterElements.forEach((el) => {
-            const target = parseInt(el.getAttribute('data-counter') || '0', 10);
-            const numSpan = el.querySelector('.counter-num');
-            if (!numSpan) return;
-
-            let frame = 0;
-            const timer = setInterval(() => {
-              frame++;
-              const progress = frame / totalFrames;
-              const easeOutProgress = 1 - Math.pow(1 - progress, 3);
-              const currentCount = Math.round(easeOutProgress * target);
-
-              numSpan.textContent = currentCount.toString();
-
-              if (frame >= totalFrames) {
-                numSpan.textContent = target.toString();
-                clearInterval(timer);
-              }
-            }, frameDuration);
-          });
-        }
-      }
-
-      function initScrollIllumination() {
-        const words = document.querySelectorAll('.scroll-word');
-        const contactSection = document.getElementById('contact');
-        if (!words.length || !contactSection) return;
-
-        function checkProgress() {
-          const rect = contactSection.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-          const triggerStart = windowHeight * 0.95;
-          const triggerEnd = windowHeight * 0.2;
-          const progress = Math.max(0, Math.min(1, (triggerStart - rect.top) / (triggerStart - triggerEnd)));
-          const activeIndex = Math.min(words.length, Math.floor(progress * (words.length + 1)));
-
-          words.forEach((el, index) => {
-            if (index < activeIndex) {
-              el.classList.add('is-lit');
-            } else {
-              el.classList.remove('is-lit');
-            }
-          });
-        }
-
-        window.addEventListener('scroll', () => requestAnimationFrame(checkProgress), { passive: true });
-        window.addEventListener('resize', checkProgress, { passive: true });
-        checkProgress();
-      }
-
-      function initStickyHeader() {
-        const header = document.querySelector('.site-header');
-        if (!header) return;
-        function updateHeader() {
-          if (window.scrollY > 20) {
-            header.classList.add('is-scrolled');
-          } else {
-            header.classList.remove('is-scrolled');
-          }
-        }
-        window.addEventListener('scroll', updateHeader, { passive: true });
-        updateHeader();
-      }
-
-      function initAll() {
-        initCounters();
-        initScrollIllumination();
-        initStickyHeader();
-      }
+    <script>
+      import { initSmoothExperience } from '../scripts/smoothScroll';
 
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAll);
+        document.addEventListener('DOMContentLoaded', initSmoothExperience);
       } else {
-        initAll();
+        initSmoothExperience();
       }
     </script>
   </body>

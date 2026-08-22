@@ -6,16 +6,18 @@ interface Props {
 const { isHome = false } = Astro.props;
 const kouns = (path: string) => `/assets/kouns/${path}`;
 const asset = (path: string) => `/assets/roofguard/${path}`;
-const prefix = isHome ? '' : '/';
+const prefix = isHome ? "" : "/";
 ---
 
 <!-- Site Footer -->
 <footer class="site-footer">
   <div class="page-width footer-columns">
     <div class="footer-brand-column">
-      <a href={isHome ? '#top' : '/'} aria-label="KOUNS Home">
-        <img src={kouns('logo-header-white.png')} alt="KOUNS" class="footer-brand-logo" />
-      </a>
+      <img
+        src={kouns("logo-header-white.png")}
+        alt="KOUNS"
+        class="footer-brand-logo"
+      />
       <p class="footer-brand-tagline">
         Think differently. Move strategically. Grow with purpose.
       </p>
@@ -32,7 +34,7 @@ const prefix = isHome ? '' : '/';
     </div>
     <div>
       <h3>Navigation</h3>
-      <a href={isHome ? '#top' : '/'}>Home</a>
+      <a href={isHome ? "#top" : "/"}>Home</a>
       <a href={`${prefix}#challenge`}>The Challenge</a>
       <a href={`${prefix}#approach`}>Our Approach</a>
       <a href={`${prefix}#work`}>How We Work</a>
@@ -41,14 +43,24 @@ const prefix = isHome ? '' : '/';
     </div>
     <div>
       <h3>Contact &amp; Inquiries</h3>
-      <a href="mailto:hello@kouns.agency"><img src={asset('imgMail02.svg')} alt="" />hello@kouns.agency</a>
-      <span><img src={asset('imgLocation10.svg')} alt="" />Global Strategic Practice</span>
-      <span><img src={asset('imgCalendar03.svg')} alt="" />Advisory Sprints &amp; Retainers</span>
+      <a href="mailto:hello@kouns.agency"
+        ><img src={asset("imgMail02.svg")} alt="" />hello@kouns.agency</a
+      >
+      <span
+        ><img src={asset("imgLocation10.svg")} alt="" />Global Strategic
+        Practice</span
+      >
+      <span
+        ><img src={asset("imgCalendar03.svg")} alt="" />Advisory Sprints &amp;
+        Retainers</span
+      >
     </div>
   </div>
   <div class="page-width footer-bottom">
     <div class="footer-bottom-links">
-      <span class="footer-bottom-statement">Strategic Growth Advisory for Ambitious Enterprises.</span>
+      <span class="footer-bottom-statement"
+        >Strategic Growth Advisory for Ambitious Enterprises.</span
+      >
       <div class="footer-legal-links">
         <a href="/privacy">Privacy Policy</a>
         <span>•</span>
@@ -57,8 +69,12 @@ const prefix = isHome ? '' : '/';
     </div>
     <div class="footer-meta">
       <div>
-        <a href="#" aria-label="LinkedIn"><img src={asset('imgLinkedin01.svg')} alt="LinkedIn" /></a>
-        <a href="#" aria-label="Twitter / X"><img src={asset('imgNewTwitterRectangle.svg')} alt="X" /></a>
+        <a href="#" aria-label="LinkedIn"
+          ><img src={asset("imgLinkedin01.svg")} alt="LinkedIn" /></a
+        >
+        <a href="#" aria-label="Twitter / X"
+          ><img src={asset("imgNewTwitterRectangle.svg")} alt="X" /></a
+        >
       </div>
       <span>© 2026 KOUNS. All rights reserved.</span>
     </div>
