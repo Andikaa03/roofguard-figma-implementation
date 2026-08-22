@@ -1,0 +1,42 @@
+---
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+const kouns = (path: string) => `/assets/kouns/${path}`;
+const asset = (path: string) => `/assets/roofguard/${path}`;
+const prefix = isHome ? '' : '/';
+---
+
+<!-- Info Bar -->
+<div class="info-bar">
+  <div class="info-items page-width">
+    <span><img src={asset('imgWork.svg')} alt="" />15+ Years Strategic Advisory</span>
+    <span><img src={asset('imgSecurityCheck.svg')} alt="" />Branding • Strategy • Business Development • Data</span>
+    <span><img src={asset('imgAppleReminder.svg')} alt="" />Outcome-Driven Growth Frameworks</span>
+    <span><img src={asset('imgTimer02.svg')} alt="" />Global Advisory Practice</span>
+  </div>
+</div>
+
+<!-- Site Header -->
+<header class="site-header">
+  <div class="page-width nav-row">
+    <a class="brand-lockup" href={isHome ? '#top' : '/'} aria-label="KOUNS Home">
+      <img src={kouns('logo-header-dark.png')} alt="KOUNS" class="brand-header-logo" />
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href={`${prefix}#challenge`}>The Challenge</a>
+      <a href={`${prefix}#disciplines`}>What We Do</a>
+      <a href={`${prefix}#approach`}>Our Approach</a>
+      <a href={`${prefix}#work`}>How We Work</a>
+      <a href={`${prefix}#who`}>Who We Work With</a>
+      <a href={`${prefix}#experience`}>Experience</a>
+      <a href={`${prefix}#about`}>About</a>
+    </nav>
+    <a href={`${prefix}#contact`} class="button button-accent button-header">
+      <span>Let’s Talk</span>
+      <img src={asset('imgArrowUpRightDark.svg')} alt="" style="width: 14px; height: 14px;" />
+    </a>
+  </div>
+</header>

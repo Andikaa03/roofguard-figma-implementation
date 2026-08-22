@@ -1,0 +1,66 @@
+---
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+const kouns = (path: string) => `/assets/kouns/${path}`;
+const asset = (path: string) => `/assets/roofguard/${path}`;
+const prefix = isHome ? '' : '/';
+---
+
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="page-width footer-columns">
+    <div class="footer-brand-column">
+      <a href={isHome ? '#top' : '/'} aria-label="KOUNS Home">
+        <img src={kouns('logo-header-white.png')} alt="KOUNS" class="footer-brand-logo" />
+      </a>
+      <p class="footer-brand-tagline">
+        Think differently. Move strategically. Grow with purpose.
+      </p>
+      <span class="footer-brand-sub">
+        Advising ambitious leadership teams worldwide.
+      </span>
+    </div>
+    <div>
+      <h3>Four Disciplines</h3>
+      <a href={`${prefix}#disciplines`}>Brand</a>
+      <a href={`${prefix}#disciplines`}>Strategy</a>
+      <a href={`${prefix}#disciplines`}>Business Development</a>
+      <a href={`${prefix}#disciplines`}>Data &amp; Insights</a>
+    </div>
+    <div>
+      <h3>Navigation</h3>
+      <a href={isHome ? '#top' : '/'}>Home</a>
+      <a href={`${prefix}#challenge`}>The Challenge</a>
+      <a href={`${prefix}#approach`}>Our Approach</a>
+      <a href={`${prefix}#work`}>How We Work</a>
+      <a href={`${prefix}#experience`}>Experience</a>
+      <a href={`${prefix}#about`}>About</a>
+    </div>
+    <div>
+      <h3>Contact &amp; Inquiries</h3>
+      <a href="mailto:hello@kouns.agency"><img src={asset('imgMail02.svg')} alt="" />hello@kouns.agency</a>
+      <span><img src={asset('imgLocation10.svg')} alt="" />Global Strategic Practice</span>
+      <span><img src={asset('imgCalendar03.svg')} alt="" />Advisory Sprints &amp; Retainers</span>
+    </div>
+  </div>
+  <div class="page-width footer-bottom">
+    <div class="footer-bottom-links">
+      <span class="footer-bottom-statement">Strategic Growth Advisory for Ambitious Enterprises.</span>
+      <div class="footer-legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <span>•</span>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div>
+        <a href="#" aria-label="LinkedIn"><img src={asset('imgLinkedin01.svg')} alt="LinkedIn" /></a>
+        <a href="#" aria-label="Twitter / X"><img src={asset('imgNewTwitterRectangle.svg')} alt="X" /></a>
+      </div>
+      <span>© 2026 KOUNS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>

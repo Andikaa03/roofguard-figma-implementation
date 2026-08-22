@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        geist: ['Geist', 'Arial', 'sans-serif'],
+        poppins: ['Poppins', 'Arial', 'sans-serif'],
+        sans: ['Poppins', 'Arial', 'sans-serif'],
       },
     },
   },
 };
+

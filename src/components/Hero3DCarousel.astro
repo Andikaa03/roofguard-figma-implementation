@@ -1,0 +1,30 @@
+---
+const kouns = (path: string) => `/assets/kouns/${path}`;
+---
+
+<!-- 3D Rotating Hero Visual Carousel -->
+<figure class="hero-3d-cards" aria-label="KOUNS Strategic Visual Carousel">
+  <div class="hero-3d-cards__content">
+    <div class="hero-3d-cards__item">
+      <img src={kouns('hero-growth.png')} alt="Strategic Growth Architecture" loading="eager" />
+      <div class="hero-3d-badge">
+        <span class="badge-dot"></span>
+        <span>Strategic Growth Architecture</span>
+      </div>
+    </div>
+    <div class="hero-3d-cards__item">
+      <img src={kouns('approach-team.jpg')} alt="Cross-Discipline Strategic Collaboration" loading="eager" />
+      <div class="hero-3d-badge">
+        <span class="badge-dot"></span>
+        <span>Cross-Discipline Synergy</span>
+      </div>
+    </div>
+    <div class="hero-3d-cards__item">
+      <img src={kouns('challenge-meeting.jpg')} alt="Executive Strategic Alignment" loading="eager" />
+      <div class="hero-3d-badge">
+        <span class="badge-dot"></span>
+        <span>Executive Commercial Impact</span>
+      </div>
+    </div>
+  </div>
+</figure>

@@ -10,6 +10,7 @@ interface Props {
 
 const { quote, name, role, location, date, avatar } = Astro.props;
 const asset = (name: string) => `/assets/roofguard/${name}`;
+const avatarSrc = avatar.startsWith('/') || avatar.startsWith('http') ? avatar : asset(avatar);
 ---
 
 <article class="testimonial-card">
@@ -20,7 +21,7 @@ const asset = (name: string) => `/assets/roofguard/${name}`;
       <span><img src={asset('imgCalendar03.svg')} alt="" />{date}</span>
     </div>
     <div class="testimonial-person">
-      <img src={asset(avatar)} alt="" />
+      <img src={avatarSrc} alt={name} />
       <span><strong>{name}</strong><small>{role}</small></span>
       <b aria-label="5 stars">
         <img src={asset('imgMynauiStarSolid.svg')} alt="" />
@@ -32,3 +33,4 @@ const asset = (name: string) => `/assets/roofguard/${name}`;
     </div>
   </div>
 </article>
+
